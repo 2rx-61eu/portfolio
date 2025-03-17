@@ -1,0 +1,483 @@
+/* ---- Style général ---- */
+body {
+  font-family: "San Francisco", sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+a {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 40px 0;
+}
+
+/* ---- Section Accueil ---- */
+#accueil {
+  text-align: left;
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+#accueil h1 {
+  font-size: 2em;
+  margin-left: 20px;
+  color: #fff;
+}
+
+#accueil p {
+  font-size: 1.2em;
+  margin-left: 20px;
+}
+
+/* ---- Navigation ---- */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  font-size: 1.1em;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Effet de survol sur les liens */
+nav ul li a:hover {
+  color: #f5f5f5;
+}
+
+/* ---- Section Accueil : Texte centré avec animation ---- */
+#welcome-container {
+  text-align: center; /* Centrage du texte */
+  margin-top: 50px;
+}
+
+.animated-welcome {
+  font-size: 3em; /* Plus grand */
+  color: #333;
+  opacity: 0;
+  transform: translateY(50px); /* Légère translation pour l'effet d'entrée */
+  animation: fadeInUp 1s forwards; /* Animation d'apparition */
+  display: inline-block;
+  text-align: center;
+}
+
+/* Animation pour l'effet d'apparition */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Section Profil ---- */
+#profil {
+  padding: 50px 0;
+  text-align: center;
+}
+
+#profil h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#profil h3 {
+  font-size: 1.8em;
+  margin-top: 20px;
+  color: #333;
+}
+
+#profil p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #666;
+  max-width: 800px;
+  margin: auto;
+  text-align: justify;
+}
+
+/* Style du bouton CV */
+.btn-cv {
+  display: inline-block;
+  background-color: #0077b5;
+  color: white;
+  font-size: 1.2em;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cv:hover {
+  background-color: #005f8d;
+}
+
+/* ---- Section Projets ---- */
+#projets .projet {
+  margin-bottom: 30px;
+}
+
+#projets img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+#projets h3 {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+#projets p {
+  font-size: 1.1em;
+}
+
+/* ---- Section Contact ---- */
+#contact p {
+  font-size: 1.1em;
+}
+
+/* ---- Footer ---- */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  #accueil h1 {
+    font-size: 2em;
+  }
+
+  section h2 {
+    font-size: 1.5em;
+  }
+
+  #projets img {
+    max-width: 100%;
+  }
+
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .welcome-message {
+    font-size: 2.5em; /* Réduction sur mobile */
+  }
+}
+
+/* ---- Ajout du CSS pour la chronologie - Section Parcours ---- */
+#parcours {
+  padding: 50px 0;
+  text-align: center;
+}
+
+#parcours h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/* ---- Timeline ---- */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding-left: 20px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 4px;  /* Moins épais pour plus de simplicité */
+  background-color: #333;  /* Gris pour respecter le code couleur */
+  height: 100%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc; /* Gris clair */
+  width: 60%;
+  text-align: left;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: auto;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-right: auto;
+}
+
+.timeline-item h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333; /* Gris foncé pour le texte */
+}
+
+.timeline-item p {
+  font-size: 1.1em;
+  color: #666; /* Gris clair pour le texte de description */
+}
+
+/* ---- Responsive pour la Timeline ---- */
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timeline-content {
+    width: 90%;
+  }
+
+  .timeline-year {
+    font-size: 1.2em;
+  }
+}
+
+/* Section Stages */
+#stages {
+  padding: 50px 0;
+  text-align: center;
+}
+
+#stages h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/* Conteneur pour les deux images côte à côte */
+.stages-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap; /* Pour la réactivité sur petits écrans */
+}
+
+.stage-item {
+  width: 45%; /* Ajuste la largeur des images */
+  position: relative;
+}
+
+.stage-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stage-item img:hover {
+  transform: scale(1.05); /* Légère agrandissement */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ajout d'ombre pour l'effet de survol */
+}
+
+/* Description sous les images */
+.stage-item .description {
+  font-size: 1.1em;
+  margin-top: 10px;
+  color: #333;
+  text-align: left; /* Aligne la description à gauche */
+  padding: 10px;
+  background-color: #f9f9f9; /* Légère couleur de fond pour la lisibilité */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Ajout d'une couleur de fond lors du survol */
+.stage-item:hover .description {
+  background-color: #e8f1f9;
+}
+
+.stage-item .description a {
+  text-decoration: none;
+  color: #0077b5;
+}
+
+.stage-item .description a:hover {
+  text-decoration: underline;
+}
+
+
+/* Section Projets */
+#projets {
+  padding: 50px 0;
+  text-align: center;
+}
+
+#projets h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images par ligne */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-item {
+  position: relative;
+}
+
+.project-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-item .description {
+  font-size: 1em;
+  margin-top: 10px;
+  color: #333;
+  text-align: left;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.project-item .description a {
+  text-decoration: none;
+  color: #0077b5;
+}
+
+.project-item .description a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Section BTS SIO ---- */
+#bts-sio {
+  padding: 50px 0;
+  text-align: center;
+}
+
+#bts-sio h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#bts-sio p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #666;
+  max-width: 800px;
+  margin: auto;
+  text-align: justify;
+}
+
+/* Style pour les options SISR et SLAM côte à côte */
+.options {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.option {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 48%;
+  text-align: left;
+}
+
+.option h3 {
+  font-size: 1.8em;
+  color: #333;
+}
+
+.option p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.option ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.option ul li {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.option img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
